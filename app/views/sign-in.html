@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Sign in – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Sign in to GOV.UK Holiday Logger
+      </h1>
+
+      <form class="form" action="/dashboard" method="post">
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Email",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "email",
+          name: "email"
+        }) }}
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+        {{ govukInput({
+          label: {
+            text: "Password",
+            classes: "govuk-label--m",
+            isPageHeading: true
+          },
+          id: "password",
+          name: "password",
+          type: "password"
+        }) }}
+
+        {{ govukButton({
+          text: "Sign in"
+        }) }}
+
+        <p>
+          <a href="/reset-password">
+            Forgot your password?
+          </a>
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

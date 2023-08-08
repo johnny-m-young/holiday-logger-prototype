@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Request annual leave
+      </h1>
+
+      <form class="form" action="/annual-leave-request/check" method="post">
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+        {{ govukDateInput({
+          id: "date-from",
+          namePrefix: "date-from",
+          fieldset: {
+            legend: {
+              text: "Annual leave from:",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "Dates are inclusive"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-from-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-from-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-from-year']
+            }
+          ]
+        }) }}
+
+        {{ govukDateInput({
+          id: "date-to",
+          value: data['date-to'],
+          namePrefix: "date-to",
+          fieldset: {
+            legend: {
+              text: "Annual leave to:",
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "Dates are inclusive"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data['date-to-day']
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data['date-to-month']
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data['date-to-year']
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

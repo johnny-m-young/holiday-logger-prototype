@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel" style="background-color: #d4351c">
+      <h1 class="govuk-panel__title" style="color: white">
+        Annual leave request denied
+      </h1>
+      <div class="govuk-panel__body" style="color: white">
+        The status will be automatically updated for your line report
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">
+      If you didn't mean to deny this request
+    </h2>
+    <p>
+      If you have denied this request in error, please contact an administrator immediately to rectify the problem.
+    </p>
+  </div>
+</div>
+
+<p>
+  <a href="/dashboard#line-reports">
+    Go back to line report dashboard
+  </a>
+</p>
+
+{% endblock %}

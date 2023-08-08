@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request sent",
+        html: "You can now view the request status on your dashboard"
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+
+      <p>
+        We've sent your request to your line manager (Rebecca Pearce) and delivery manager (Murilo Lessa) for approval.
+      </p>
+
+      <p>
+        Your dashboard will be updated when they have responded to your request.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    <a href="/dashboard">
+      Go to your dashboard
+    </a>
+  </p>
+
+{% endblock %}

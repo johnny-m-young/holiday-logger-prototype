@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Annual leave request approved",
+        html: "The status will be automatically updated for your line report"
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        If you didn't mean to approve this request
+      </h2>
+      <p>
+        If you have approved this request in error, please contact an administrator immediately to rectify the problem.
+      </p>
+    </div>
+  </div>
+
+  <p>
+    <a href="/dashboard#line-reports">
+      Go back to line report dashboard
+    </a>
+  </p>
+
+{% endblock %}
